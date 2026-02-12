@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم متابعة الحوامل</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
+        body { font-family: 'Noto Sans Arabic', sans-serif; background-color: #f0f4f8; }
+        .risk-high { background-color: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; }
+        .risk-low { background-color: #dcfce7; color: #16a34a; border: 1px solid #86efac; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <!-- Header -->
+    <div class="max-w-6xl mx-auto mb-8 flex justify-between items-center">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800 tracking-tight">نظام إدارة ومتابعة الحوامل الذكي</h1>
+            <p class="text-gray-500">متابعة الزيارات - الأشعة - مستويات الخطورة</p>
+        </div>
+        <div class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md cursor-pointer hover:bg-blue-700 transition">
+            <i class="fas fa-plus-circle ml-2"></i>إضافة مريضة جديدة
+        </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+        <div class="bg-white p-6 rounded-xl shadow-sm border-b-4 border-blue-500">
+            <p class="text-gray-500 text-sm">إجمالي الحالات</p>
+            <p class="text-3xl font-bold text-gray-800">124</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-b-4 border-red-500">
+            <p class="text-gray-500 text-sm">حالات خطورة عالية</p>
+            <p class="text-3xl font-bold text-red-600">12</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-b-4 border-purple-500">
+            <p class="text-gray-500 text-sm">محولات للأشعة (اليوم)</p>
+            <p class="text-3xl font-bold text-purple-600">8</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border-b-4 border-green-500">
+            <p class="text-gray-500 text-sm">مواعيد القادمة</p>
+            <p class="text-3xl font-bold text-green-600">15</p>
+        </div>
+    </div>
+
+    <!-- Patient Table -->
+    <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-sm overflow-hidden">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+            <h2 class="text-lg font-bold text-gray-800">قائمة المتابعة الحالية</h2>
+            <div class="flex space-x-2 space-x-reverse">
+                <input type="text" placeholder="بحث باسم المريضة..." class="border rounded-lg px-4 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-right border-collapse">
+                <thead>
+                    <tr class="bg-gray-50 text-gray-600 text-sm">
+                        <th class="p-4 border-b font-bold">اسم المريضة</th>
+                        <th class="p-4 border-b font-bold text-center">عدد الزيارات</th>
+                        <th class="p-4 border-b font-bold text-center">الأشعة (السونار)</th>
+                        <th class="p-4 border-b font-bold text-center">مستوى الخطورة</th>
+                        <th class="p-4 border-b font-bold">الموعد القادم</th>
+                        <th class="p-4 border-b font-bold">الإجراءات</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                    <tr class="hover:bg-gray-50 border-b border-gray-50">
+                        <td class="p-4 font-medium">سارة أحمد محمد</td>
+                        <td class="p-4 text-center"><span class="bg-gray-200 px-3 py-1 rounded-full text-xs">4 زيارات</span></td>
+                        <td class="p-4 text-center"><i class="fas fa-check-circle text-purple-500"></i></td>
+                        <td class="p-4 text-center"><span class="risk-high px-3 py-1 rounded-full text-xs font-bold">عالية</span></td>
+                        <td class="p-4 text-sm text-gray-500 italic">غداً - 10:00 ص</td>
+                        <td class="p-4"><button class="text-blue-600 hover:underline text-sm font-bold">تعديل الملف</button></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50 border-b border-gray-50">
+                        <td class="p-4 font-medium">ليلى إبراهيم علي</td>
+                        <td class="p-4 text-center"><span class="bg-gray-200 px-3 py-1 rounded-full text-xs">2 زيارة</span></td>
+                        <td class="p-4 text-center"><i class="fas fa-times-circle text-gray-300"></i></td>
+                        <td class="p-4 text-center"><span class="risk-low px-3 py-1 rounded-full text-xs font-bold">مستقرة</span></td>
+                        <td class="p-4 text-sm text-gray-500 italic">السبت - 01:00 م</td>
+                        <td class="p-4"><button class="text-blue-600 hover:underline text-sm font-bold">تعديل الملف</button></td>
+                    </tr>
+                     <tr class="hover:bg-gray-50">
+                        <td class="p-4 font-medium">مريم يوسف</td>
+                        <td class="p-4 text-center"><span class="bg-gray-200 px-3 py-1 rounded-full text-xs">6 زيارات</span></td>
+                        <td class="p-4 text-center"><i class="fas fa-check-circle text-purple-500"></i></td>
+                        <td class="p-4 text-center"><span class="risk-low px-3 py-1 rounded-full text-xs font-bold">مستقرة</span></td>
+                        <td class="p-4 text-sm text-gray-500 italic">25 فبراير</td>
+                        <td class="p-4"><button class="text-blue-600 hover:underline text-sm font-bold">تعديل الملف</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Automation Note -->
+    <div class="max-w-6xl mx-auto mt-6 bg-blue-50 border-r-4 border-blue-500 p-4 rounded-lg">
+        <p class="text-blue-800 text-sm">
+            <i class="fas fa-info-circle ml-2"></i>
+            <strong>خاصية التذكير التلقائي:</strong> تم تفعيل إرسال تنبيهات الواتساب قبل الموعد بـ 24 ساعة لضمان حضور الحالات الخطرة في موعدها.
+        </p>
+    </div>
+
+</body>
+</html>
